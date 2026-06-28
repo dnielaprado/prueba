@@ -1,0 +1,885 @@
+---
+format: 
+  pdf: 
+    papersize: letter
+    documentclass: article
+    lang: es-CR
+    titlepage: true
+    toc: true
+    toc-title: "Índice"
+    toccolor: "black"
+    fontsize: "11pt"
+    mainfont: Times New Roman
+    urlcolor: "blue"
+    number-sections: true
+    margin-left: "2.54cm"
+    margin-right: "2.54cm"
+    margin-top: "2.54cm"
+    margin-bottom: "2.54cm"
+    header-includes:
+      - \usepackage{indentfirst}
+      - \setlength{\parindent}{1.27cm}
+      - \usepackage{longtable}
+      - \usepackage{array}
+      - \renewcommand{\arraystretch}{1.5}
+      - \setlength{\tabcolsep}{8pt}
+      - \usepackage{float}
+      - \usepackage{textcomp}
+    include-before-body: Portada.tex
+---
+
+```{=latex}
+\setcounter{page}{1}
+```
+
+\newpage
+
+# Análisis estadístico de la población de empleados activos y pensionados
+
+El análisis estadístico inicial permite describir las principales características demográficas y financieras de la población considerada en el modelo. Para este proyecto se trabajó con dos grupos principales: empleados activos y pensionados. En ambos casos se analizaron variables como sexo, edad, salario mensual, pensión mensual, mortalidad y esperanza de vida. Esta caracterización es necesaria porque los resultados actuariales dependen directamente de la edad, el sexo, la permanencia esperada, la mortalidad y los beneficios asociados a cada grupo.
+
+## Empleados activos
+
+La población de empleados activos está compuesta por 224 personas. De este total, 115 son mujeres y 109 son hombres. Esto representa una distribución relativamente equilibrada por sexo, con una participación femenina de aproximadamente 51,34 % y una participación masculina de 48,66 %. Esta separación es importante porque el modelo considera edades de jubilación distintas para mujeres y hombres.
+
+En términos de edad, los empleados activos presentan una edad promedio total de 36,82 años. Las mujeres tienen una edad promedio de 37,29 años, mientras que los hombres tienen una edad promedio de 36,33 años. La edad mínima observada en la población activa es de 22 años y la edad máxima es de 62 años. Esto muestra que la población activa es relativamente joven, aunque existen algunos empleados cercanos a la edad de jubilación.
+
+La antigüedad promedio total de los empleados activos es de 5,36 años. Las mujeres presentan una antigüedad promedio de 5,97 años y los hombres de 4,72 años. Esta variable es relevante porque puede influir en beneficios futuros, especialmente en cálculos relacionados con jubilación, beneficios por muerte o pagos acumulados.
+
+Desde el punto de vista salarial, el salario mensual promedio total es de aproximadamente ₡1.026.165,85. Al separar por sexo, el salario mensual promedio de las mujeres es de aproximadamente ₡1.088.808,49, mientras que el de los hombres es de aproximadamente ₡960.074,99. La masa salarial anual estimada asciende a ₡2.758.333.800,00. Este monto corresponde al salario mensual anualizado según la base actual del modelo.
+
+La esperanza de vida promedio de los empleados activos es de 50,14 años adicionales. Las mujeres presentan una esperanza de vida promedio de 51,92 años y los hombres de 48,28 años. Este resultado es coherente con el comportamiento esperado de mortalidad, donde usualmente las mujeres presentan mayor supervivencia esperada que los hombres. Esta variable es fundamental para la proyección demográfica, ya que permite estimar el horizonte de exposición a eventos como muerte, permanencia activa y jubilación.
+
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla \#**
+
+*Resumen estadístico de empleados activos*
+
+```{=latex}
+\end{center}
+```
+
+| Indicador | Femenino | Masculino | Total |
+|-------------------|-----------------:|-----------------:|-----------------:|
+| Cantidad | 115 | 109 | 224 |
+| Edad promedio | 37,29 | 36,33 | 36,82 |
+| Edad mínima | 24 | 22 | 22 |
+| Edad máxima | 58 | 62 | 62 |
+| Antigüedad promedio | 5,97 | 4,72 | 5,36 |
+| Salario mensual promedio | ₡1.088.808,49 | ₡960.074,99 | ₡1.026.165,85 |
+| Masa salarial anual estimada | ₡1.502.555.717,40 | ₡1.255.778.082,60 | ₡2.758.333.800,00 |
+| Esperanza de vida promedio | 51,92 | 48,28 | 50,14 |
+
+## Pensionados
+
+La población de pensionados está conformada por 165 personas. De este total, 91 son mujeres y 74 son hombres. Las mujeres representan aproximadamente 55,15 % de la población pensionada, mientras que los hombres representan 44,85 %. En comparación con la población activa, los pensionados presentan una mayor proporción relativa de mujeres, lo cual es coherente con una mayor supervivencia esperada.
+
+La edad promedio total de los pensionados es de 72,85 años. Las mujeres pensionadas presentan una edad promedio de 72,92 años, mientras que los hombres pensionados tienen una edad promedio de 72,76 años. La edad mínima observada en pensionados es de 57 años y la edad máxima es de 97 años. Esta estructura refleja una población de edad avanzada, por lo que la mortalidad y la duración esperada de los pagos de pensión son elementos centrales para el modelo.
+
+En cuanto a los montos de pensión, la pensión mensual promedio total es de aproximadamente ₡195.965,58. Las mujeres presentan una pensión mensual promedio de ₡187.979,87 y los hombres de ₡205.785,84. Esto indica que, en promedio, los hombres pensionados reciben una pensión mensual superior a la de las mujeres. La pensión anual total estimada asciende a ₡420.346.166,50.
+
+La esperanza de vida promedio de los pensionados es de 16,01 años adicionales. Al separar por sexo, las mujeres presentan una esperanza de vida promedio de 16,87 años y los hombres de 14,94 años. Este resultado es consistente con la estructura demográfica esperada, ya que las mujeres pensionadas presentan una supervivencia promedio mayor que los hombres pensionados. En este grupo, la esperanza de vida debe interpretarse junto con la edad actual de cada pensionado y con la duración esperada de los pagos futuros.
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla \#**
+
+*Resumen estadístico de pensionados*
+
+```{=latex}
+\end{center}
+```
+
+| Indicador | Femenino | Masculino | Total |
+|-------------------|-----------------:|-----------------:|-----------------:|
+| Cantidad | 91 | 74 | 165 |
+| Edad promedio | 72,92 | 72,76 | 72,85 |
+| Edad mínima | 57 | 61 | 57 |
+| Edad máxima | 92 | 97 | 97 |
+| Pensión mensual promedio | ₡187.979,87 | ₡205.785,84 | ₡195.965,58 |
+| Pensión anual total estimada | ₡222.380.185,95 | ₡197.965.980,55 | ₡420.346.166,50 |
+| Esperanza de vida promedio | 16,87 | 14,94 | 16,01 |
+
+## Comparación entre empleados activos y pensionados
+
+Al comparar ambas poblaciones, se observa una diferencia clara en la estructura demográfica. Los empleados activos tienen una edad promedio de 36,82 años, mientras que los pensionados presentan una edad promedio de 72,85 años. Esta diferencia es esperada, ya que los empleados activos aún se encuentran dentro de la etapa laboral, mientras que los pensionados ya se encuentran en la etapa de pago de beneficios.
+
+También se observa una diferencia importante en la esperanza de vida. Los empleados activos tienen una esperanza de vida promedio de 50,14 años adicionales, mientras que los pensionados tienen una esperanza de vida promedio de 16,01 años adicionales. Esto no significa que los activos tengan menor riesgo, sino que tienen un horizonte de exposición más largo. En cambio, los pensionados tienen una edad más avanzada, por lo que su análisis se concentra principalmente en la supervivencia y en la duración esperada de los pagos.
+
+Desde el punto de vista financiero, los empleados activos están asociados principalmente con salarios, masa salarial y beneficios futuros. En cambio, los pensionados representan obligaciones actuales de pago que deben proyectarse en el tiempo. Por esta razón, el modelo trata ambos grupos de forma diferenciada: para los activos se modela la transición entre sobrevivencia, muerte y jubilación, mientras que para los pensionados se proyectan pagos condicionados a supervivencia.
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla \#**
+
+*Comparación general entre empleados activos y pensionados*
+
+```{=latex}
+\end{center}
+```
+
+| Indicador                     | Empleados activos |     Pensionados |
+|-------------------------------|------------------:|----------------:|
+| Cantidad total                |               224 |             165 |
+| Mujeres                       |               115 |              91 |
+| Hombres                       |               109 |              74 |
+| Edad promedio total           |             36,82 |           72,85 |
+| Esperanza de vida promedio    |             50,14 |           16,01 |
+| Variable financiera principal |   Salario mensual | Pensión mensual |
+| Flujo anual total estimado    | ₡2.758.333.800,00 | ₡420.346.166,50 |
+
+En síntesis, la población activa es más joven, tiene mayor esperanza de vida adicional y requiere una proyección de transición entre estados laborales y actuariales. Por su parte, la población pensionada es de mayor edad y su análisis se concentra en la continuidad esperada de los pagos de pensión. Esta diferencia justifica que el modelo utilice tratamientos separados para activos y pensionados dentro del cálculo determinístico de contingencias de vida.
+
+# Sección metodológica
+
+## Proyección demográfica de empleados activos
+
+La proyección demográfica de empleados activos se realizó a partir de la base depurada de trabajadores vigentes al inicio del periodo de valoración. Para cada empleado se utilizaron las variables de sexo, fecha de nacimiento, fecha de ingreso, salario mensual, edad al corte, antigüedad, edad de jubilación y probabilidad inicial de muerte. La fecha de corte utilizada fue el 31 de diciembre de 2025.
+
+En primer lugar, se organizó y limpió la base de empleados activos. Se verificó la existencia de identificadores, fechas válidas, sexo correctamente clasificado y salarios positivos. Luego, se calcularon variables derivadas necesarias para el modelo, como la edad al corte, la antigüedad laboral, la edad normal de jubilación y los años restantes hasta la jubilación.
+
+La edad normal de jubilación se definió según el sexo del empleado:
+
+$$
+R_s =
+\begin{cases}
+65, & \text{si } s=\text{hombre},\
+63, & \text{si } s=\text{mujer}.
+\end{cases}
+$$
+
+Posteriormente, se asignó a cada empleado activo una probabilidad inicial de muerte (q_x) y una esperanza de vida (e_x), utilizando la tabla de mortalidad SP-2015. Esta asignación se realizó según la edad, el sexo, el año de nacimiento y el año de valoración. Con esto, cada empleado quedó asociado a una mortalidad inicial y a una esperanza de vida individual.
+
+Para la proyección anual, cada empleado activo se modeló bajo tres posibles estados: continuar activo, fallecer o jubilarse. Al inicio de la proyección, cada empleado tiene una probabilidad de permanencia activa igual a 1. En cada año proyectado, se calcularon las muertes esperadas como el producto entre la cantidad esperada de activos al inicio del año y su probabilidad de muerte:
+
+$$
+D_{i,t}=L_{i,t}q_{x_i}.
+$$
+
+Donde (D_{i,t}) representa las muertes esperadas del empleado (i) en el año (t), (L_{i,t}) representa la probabilidad de que el empleado permanezca activo al inicio del año y (q_{x_i}) corresponde a la probabilidad inicial de muerte obtenida de la tabla SP-2015.
+
+La cantidad esperada de sobrevivientes se calculó como
+
+$$
+S_{i,t}=L_{i,t}-D_{i,t}.
+$$
+
+Si el empleado alcanzaba la edad normal de jubilación durante el año proyectado, se registraba su salida como jubilación. En ese caso, el empleado dejaba de formar parte de la población activa proyectada. Si no alcanzaba la edad de jubilación, los sobrevivientes permanecían como activos al cierre del año:
+
+$$
+L_{i,t+1}=S_{i,t}-J_{i,t}.
+$$
+
+Donde (J_{i,t}) representa la salida esperada por jubilación. De esta forma, la transición anual de empleados activos se resumió mediante la relación entre activos al inicio, muertes esperadas, jubilaciones esperadas y activos al cierre.
+
+Finalmente, los resultados individuales se agregaron por año y sexo. Para cada año proyectado se obtuvo la cantidad esperada de activos al inicio, muertes esperadas, jubilaciones esperadas y activos al cierre, separados entre mujeres, hombres y total. Esta estructura permitió analizar la evolución demográfica de la población activa y generar las tablas y gráficos correspondientes del modelo.
+
+## Proyección demográfica y proyección de muertes de pensionados
+
+La proyección demográfica de pensionados se desarrolló a partir del enfoque actuarial clásico de supervivencia presentado por Bowers et al. (1997). Bajo este enfoque, se considera una vida de edad $(x)$ y se modela su tiempo de vida futuro mediante la variable aleatoria $(T_x)$. En el caso discreto, se utiliza la vida futura acotada $(K_x)$, lo que permite expresar probabilidades de supervivencia y fallecimiento en años enteros.
+
+La probabilidad de que una vida de edad $(x)$ sobreviva $(k)$ años se denota como
+
+$$
+{}_k p_x.
+$$
+
+Asimismo, la probabilidad de que una vida de edad $(x+k)$ fallezca durante el siguiente año se denota como
+
+$$
+q_{x+k}.
+$$
+
+Por tanto, la probabilidad de sobrevivir $(k)$ años y fallecer durante el año siguiente se expresa como
+
+$$
+{}*k p_x q*{x+k}.
+$$
+
+En este proyecto se mantuvo esta lógica de supervivencia anual discreta, pero adaptada a la tabla de mortalidad dinámica SP-2015 de SUPEN. Esta tabla permite que la probabilidad de muerte varíe según la edad, el sexo y el año calendario. Por ello, la probabilidad anual de muerte se representó como
+
+$$
+q_x^{(s,y)},
+$$
+
+donde $(x)$ es la edad alcanzada, $(s)$ el sexo de la persona y $(y)$ el año calendario proyectado.
+
+Así, la probabilidad de supervivencia acumulada durante $(k)$ años, para una persona de edad inicial $(x)$, sexo $(s)$ y año base $(y_0)$, se calculó como
+
+$$
+\prod_{j=0}^{k-1}
+\left(1-q_{x+j}^{(s,y_0+j)}\right).
+$$
+
+Esta expresión conserva la estructura de $({}_k p_x)$ de Bowers et al. (1997), pero incorpora la mortalidad dinámica de la tabla SP-2015.
+
+La población pensionada proyectada se dividió en dos componentes: los pensionados existentes al inicio del periodo de valoración y los empleados activos que alcanzan la edad de jubilación durante el horizonte de proyección. Por tanto, la cantidad esperada de pensionados vivos al inicio del año $(k)$ se definió como
+
+$$
+L_k^{P_0}
++
+L_k^{A\to P},
+$$
+
+donde $(L_k^{P_0})$ representa los pensionados iniciales sobrevivientes y $(L_k^{A\to P})$ los empleados activos que se incorporan como pensionados.
+
+Para los pensionados iniciales, la cantidad esperada de vivos al inicio del año $(k)$ se calculó como
+
+$$
+\sum_{i\in P_0}
+{}*k p*{x_i}^{(s_i,y_0)},
+$$
+
+donde $(P_0)$ es el conjunto de pensionados iniciales, $(x_i)$ la edad inicial del pensionado $(i)$ y $(s_i)$ su sexo.
+
+Las muertes esperadas de estos pensionados durante el año $(k)$ se obtuvieron mediante
+
+$$
+\sum_{i\in P_0}
+{}*k p*{x_i}^{(s_i,y_0)}
+q_{x_i+k}^{(s_i,y_0+k)}.
+$$
+
+Esta expresión corresponde a la forma discreta usual $({}*k p_x q*{x+k})$, adaptada a una tabla dinámica de mortalidad.
+
+Para incorporar a los empleados activos que se convierten en pensionados, se utilizó la edad normal de jubilación definida en el proyecto: 65 años para hombres y 63 años para mujeres. Esta condición se expresó como
+
+$$
+R_s =
+\begin{cases}
+65, & \text{si } s=\text{hombre},\
+63, & \text{si } s=\text{mujer}.
+\end{cases}
+$$
+
+Si un empleado activo $(i)$ alcanza la edad de jubilación después de $(k_i^R)$ años, su probabilidad de llegar vivo a la jubilación se calculó como
+
+$$
+\prod_{j=0}^{k_i^R-1}
+\left(1-q_{x_i+j}^{(s_i,y_0+j)}\right).
+$$
+
+Una vez alcanzada la jubilación, el individuo se incorpora a la población pensionada proyectada. Para $(k\geq k_i^R)$, su contribución esperada a los pensionados vivos al inicio del año $(k)$ se representó como
+
+$$
+{}*{k_i^R}p*{x_i}^{(s_i,y_0)}
+\prod_{j=k_i^R}^{k-1}
+\left(1-q_{R_{s_i}+j-k_i^R}^{(s_i,y_0+j)}\right).
+$$
+
+En cambio, si $(k<k_i^R)$, el empleado activo todavía no forma parte de la población pensionada.
+
+Las muertes esperadas de los activos que ya se incorporaron como pensionados se calcularon como
+
+$$
+L_{i,k}^{A\to P}
+q_{R_{s_i}+k-k_i^R}^{(s_i,y_0+k)},
+\qquad k\geq k_i^R.
+$$
+
+Finalmente, las muertes esperadas totales de pensionados para cada año se obtuvieron mediante
+
+$$
+D_k^{P_0}
++
+D_k^{A\to P}.
+$$
+
+Este enfoque permitió considerar tanto la supervivencia de los pensionados iniciales como la incorporación futura de empleados activos que alcanzan la jubilación dentro del horizonte de proyección.
+
+## Proyección financiera de los flujos por beneficios de muerte
+
+Para la proyección financiera de los beneficios de muerte se separaron los cálculos según la condición del participante al momento del fallecimiento. El beneficio de muerte de empleados activos se calculó mediante un enfoque individual, proyectando a cada persona año a año. En cambio, el beneficio de muerte de pensionados se calculó de forma agregada por año, a partir de las muertes esperadas anuales de la población pensionada.
+
+Dada la fecha de corte, el primer año proyectado correspondió a 2026 y los flujos esperados de dicho año se descontaron por un período completo. Por tanto, para un flujo correspondiente al año $(a)$, el tiempo de descuento se definió como
+
+$$
+t = a - 2025.
+$$
+
+De esta forma, el flujo del año 2026 se valoró con $(t=1)$, el flujo del año 2027 con $(t=2)$, y así sucesivamente.
+
+Para los empleados activos, el cálculo se realizó individualmente. Para cada persona $(j)$, se estimó la probabilidad de encontrarse viva al inicio de cada año de proyección y de fallecer durante ese año. Si la edad de la persona en la fecha de corte es $(x_j)$, la probabilidad esperada de muerte en el año $(t)$ se expresó como
+
+$$
+{}*{t-1}p*{x_j}q_{x_j+t-1},
+$$
+
+donde $({}*{t-1}p*{x_j})$ representa la probabilidad de supervivencia hasta el inicio del año de riesgo, y $(q_{x_j+t-1})$ corresponde a la probabilidad de fallecimiento durante ese año.
+
+Si el beneficio por muerte de activos se denota por $(B_A)$, el flujo esperado individual para el año $(t)$ fue
+
+$$
+FE^{A}*{j,t}=B_A \cdot {}*{t-1}p_{x_j}q_{x_j+t-1},
+$$
+
+siempre que la persona permaneciera como activa al inicio del año de riesgo. Si la persona ya había alcanzado la edad de jubilación, el flujo no se clasificó como beneficio de muerte de activos.
+
+Para los pensionados, el cálculo financiero se realizó de forma agregada por año. En este grupo se incluyeron tanto los pensionados existentes en la fecha de corte como los empleados activos que alcanzaron la jubilación dentro del horizonte de proyección. En el caso de los pensionados actuales, su condición de pensionados se mantuvo según la base de datos, aunque su edad fuera menor que la edad estándar de jubilación.
+
+Las muertes esperadas anuales de pensionados se obtuvieron previamente en la proyección demográfica. Por ello, si $(D_t^P)$ representa las muertes esperadas totales de pensionados en el año $(t)$ y $(B_P)$ el beneficio por muerte de pensionados, el flujo esperado anual se calculó como
+
+$$
+FE_t^P = B_P \cdot D_t^P.
+$$
+
+Es decir, para pensionados no se calculó el flujo financiero persona por persona, sino que se tomó el total de muertes esperadas de cada año y se multiplicó por el beneficio correspondiente.
+
+El valor presente de cada flujo esperado se calculó mediante
+
+$$
+VP_t=\frac{FE_t}{(1+i)^t},
+$$
+
+donde $(i)$ representa la tasa de descuento anual. Para los activos, este valor presente provino de los flujos individuales agregados por año. Para los pensionados, provino directamente del flujo anual agregado.
+
+Finalmente, el costo actuarial de cada beneficio se obtuvo como la suma de los valores presentes esperados a lo largo del horizonte de proyección:
+
+$$
+CA=\sum_t VP_t.
+$$
+
+Este procedimiento permitió mantener el cálculo individual para el beneficio de muerte de empleados activos y, al mismo tiempo, calcular el beneficio de muerte de pensionados de forma agregada por año. Además, la separación entre ambos beneficios evitó doble conteo y aseguró que cada flujo fuera asignado según la condición de la persona al momento del fallecimiento.
+
+## Anualidades de vida
+
+El beneficio de jubilación del plan (pensión mensual cierta por 5 años y luego vitalicia, con un pago adicional anual de aguinaldo) corresponde a una anualidad cierta y vitalicia, pagada en forma discreta y vencida: cada flujo se recibe al final del año correspondiente. El desarrollo teórico que sustenta el modelo sigue el marco de Bowers et al. (1997), quienes presentan de forma unificada las anualidades continuas y discretas a partir de la variable aleatoria de tiempo de vida futuro T(x).
+
+Se asumen los supuestos estándar de dicho marco: tasa de interés efectiva anual constante $i$ (con $v=(1+i)^{-1}$) y mortalidad agregada, con la extensión a mortalidad dinámica que se detalla más adelante.
+
+Para una anualidad vencida de vida entera que paga 1 al final de cada año mientras $(x)$ sobrevive, Bowers et al. (1997) muestran que el valor actuarial presente puede expresarse, vía la técnica del pago corriente, como
+
+$$a_x = \sum_{k=1}^{\infty} v^k \,{}_k p_x .$$
+
+Esta es la forma operativa que sustenta el modelo: en lugar de obtener un valor cerrado de la anualidad, cada flujo anual nominal se pondera por la probabilidad de que el pago se realice (${}_kp_x$) y se descuenta a la fecha de valuación.
+
+Para una anualidad temporal de $n$ años (Bowers et al., 1997),
+
+$$a_{x:\overline{n}|} = \sum_{k=1}^{n} v^k \,{}_k p_x ,$$
+
+y para la anualidad diferida $n$ años (Bowers et al., 1997),
+
+$${}_{n|}a_x = a_x - a_{x:\overline{n}|} = \sum_{k=n+1}^{\infty} v^k \,{}_k p_x .$$
+
+Esta última es de suma relevancia para los empleados activos: ya que la pensión de un activo solo comienza a pagarse a partir del momento de su jubilación, por lo que su valor actuarial es el de una anualidad diferida $n=t_{jub}-x$ años, ponderada además por la probabilidad de que el empleado llegue vivo a la jubilación, ${}_{n}p_x$.
+
+El beneficio descrito en el enunciado del proyecto (garantía de 5 años y luego vitalicio) es el caso particular conocido como *n-year certain and life annuity-immediate*, denotado $a_{x:\overline{n}|}^{\,-}$. Aplicando la misma técnica de descomposición que Bowers et al. (1997) emplean para la versión anticipada, pero ajustada a pagos vencidos, su valor actuarial es
+
+$$a_{x:\overline{n}|}^{\,-} \;=\; a_{\overline{n}|} \;+\; \sum_{k=n+1}^{\infty} v^k \,{}_k p_x
+\;=\; a_{\overline{n}|} + a_x - a_{x:\overline{n}|}.$$
+
+La interpretación es que $Y$ es igual a $a_{\overline n|}$ con certeza si la muerte ocurre durante o antes del año cierto $n$ (los $n$ pagos vencidos se realizan sin importar la supervivencia más allá de ese punto), y a $a_{\overline{K+1}|}$ si la sobrevida se extiende más allá del año $n$, donde $K+1$ es el número total de pagos vencidos efectivamente recibidos (Bowers et al., 1997). Esto justifica que el modelo descomponga la valuación de cada persona en dos componentes: primeramente el componente cierto (los pagos vencidos correspondientes a $t=1,\dots,n=5$ años desde la jubilación) donde el pago no se pondera por mortalidad, ya que está garantizado, y seguidamente el componente vitalicio, que es donde el pago se pondera por la probabilidad de supervivencia ${}_kp_x$.
+
+Esta separación es precisamente la descomposición algebraica que sugiere la ecuación anterior, y permite calcular cada bloque por separado y sumarlos para obtener el valor total de la prestación.
+
+La determinación de la frontera temporal entre el componente cierto y el componente vitalicio difiere según la condición del participante en la fecha de corte. Por un lado, para los empleados activos que se jubilan dentro del horizonte de proyección, el período cierto corresponde, sin ambigüedad, a los primeros 5 pagos vencidos posteriores al momento efectivo de la jubilación ($t_{jub}$), es decir, los pagos correspondientes a los años $t_{jub}+1$ hasta $t_{jub}+5$, dado que el modelo asume que todo nuevo jubilado se retira exactamente a la edad estipulada por el enunciado del proyecto ($R_s$). Por otro lado, para los pensionados ya existentes en la fecha de corte, la frontera del período cierto se calculó en función de la edad estipulada de jubilación y no de la edad real de retiro del pensionado. De esta manera, si $x_i$ es la edad de un pensionado actual y $R_{s_i}$ su edad estipulada de jubilación según el sexo, el período cierto remanente, expresado en años transcurridos desde la fecha de corte ($t$), se definió como el intervalo:
+
+$$[\max(R_{s_i}-x_i+1,\,1),\;\max(R_{s_i}-x_i+5,\,0)]$$
+
+Esta regla cubre dos casos particulares. Por un lado, si el pensionado se jubiló de forma anticipada ($x_i < R_{s_i}$), el período cierto remanente solo inicia con el primer pago vencido posterior al año en que la persona habría alcanzado la edad estipulada de jubilación, no con un pago coincidente con esa fecha, y no desde su fecha real de retiro. Por otro lado, si a la fecha de corte el pensionado ya superó por completo la ventana de 5 años de garantía ($x_i \ge R_{s_i}+5$), el intervalo resultante queda vacío y la totalidad de sus pagos futuros se valora bajo el componente vitalicio. De este modo, para cualquier año de proyección que quede fuera de este intervalo, el pago correspondiente se trata como vitalicio y se pondera por la probabilidad de supervivencia ${}_t p_{x_i}$.
+
+El modelo incorpora además dos condiciones restrictivas que delimitan qué empleados activos generan flujo de anualidad. Primero, solo quienes acumulen una antigüedad mayor a 10 años al momento de la jubilación tienen derecho a un porcentaje de pensión distinto de cero, según la escala de reemplazo definida por tramos de años de servicio; los empleados que no cumplen este mínimo no generan flujo alguno de anualidad. Segundo, si un empleado activo ya superó la edad estipulada de jubilación a la fecha de corte, se le asigna $t_{jub}=0$, es decir, se le trata como si se jubilara de forma inmediata en el año de corte, evaluando su pensión y probabilidad de supervivencia bajo esa misma condición.
+
+El monto del beneficio se determina con periodicidad mensual (12 mensualidades regulares más un pago adicional de aguinaldo), pero esta estructura se resuelve antes de aplicar la teoría de anualidades, no dentro de ella. El salario activo se multiplica primero por 13 para consolidar en un solo bloque las 12 mensualidades más el aguinaldo, y ese bloque se proyecta con el factor de crecimiento salarial $g=(1+\text{inflación})(1+\text{incremento real})-1$ hasta el momento de jubilación:
+
+$$\text{salario}_{jub} \;=\; \big(\text{salario}_{act}\times 13\big)\times(1+g)^{t_{jub}},$$
+
+monto que luego se multiplica por el porcentaje de pensión para obtener el beneficio anual agregado, $\text{pensión}_{jub}$. Por la propiedad conmutativa de la multiplicación, el factor de crecimiento $(1+g)^{t_{jub}}$ se aplica de manera uniforme sobre el bloque salarial ya anualizado, y no de forma diferenciada sobre alguno de sus componentes: el salario regular y el aguinaldo crecen exactamente al mismo ritmo, como un único monto consolidado.
+
+Es importante distinguir dos tasas de crecimiento aplicadas en momentos distintos del modelo. Antes de la jubilación, el salario se proyecta con la tasa combinada $g=(1+\text{inflación})(1+\text{incremento real})-1$, ya que durante la vida activa se espera tanto el ajuste por inflación como el crecimiento real de los salarios. Una vez determinado el monto de la pensión al momento de la jubilación, los pagos posteriores (tanto para los nuevos jubilados como para los pensionados ya existentes en la fecha de corte) se indexan únicamente por la tasa de inflación, sin incorporar el componente de incremento real. Esto refleja que las pensiones se ajustan por costo de vida una vez otorgadas, pero no continúan creciendo en términos reales como lo haría un salario activo.
+
+A partir de este monto anual, el modelo opera enteramente en la escala anual: la indexación por inflación, la clasificación entre período cierto (primeros 5 años) y vitalicio, la ponderación por la probabilidad de supervivencia, y el descuento financiero, se aplican todos sobre flujos anuales únicos, vencidos. En la notación de Bowers et al. (1997), esto corresponde al caso particular $m=1$ de la familia de anualidades $a_x^{(m)}$, para el cual $\alpha(1)=1$ y $\beta(1)=0$, de modo que $a_x^{(1)}=a_x$ exactamente. Es decir, se trata del caso anual puro y exacto: la estructura de pagos mensuales del beneficio queda absorbida por completo en la construcción del monto anual agregado, y no interviene en el tratamiento actuarial de la anualidad propiamente dicha.
+
+El desarrollo de Bowers et al. (1997) asume una tabla de mortalidad agregada y estática, de modo que ${}_kp_x$ depende únicamente de la edad. La tabla SP-2015 de SUPEN es, en cambio, dinámica (generacional): la probabilidad de sobrevivir un año depende tanto de la edad como del año calendario proyectado, reflejando las mejoras esperadas en la mortalidad. La generalización natural de la fórmula de supervivencia acumulada es
+
+$${}_k p_x \;=\; \prod_{j=0}^{k-1} p_{\,x+j}(\tau+j),$$
+
+donde $p_{x+j}(\tau+j)$ es la probabilidad de sobrevivir un año a la edad $x+j$ en el año calendario $\tau+j$. Esto implica dos supuestos de extrapolación necesarios: cuando la edad excede la edad máxima tabulada, la probabilidad de supervivencia se considera nula; y cuando el año calendario proyectado excede el último año disponible en la tabla, la mortalidad se mantiene constante en el nivel del último año tabulado. Ambos supuestos son requeridos porque la tabla SP-2015 cubre un horizonte finito de años de proyección, mientras que el modelo necesita probabilidades de supervivencia hasta 100 años hacia adelante.
+
+Finalmente, siguiendo la técnica del pago corriente, el costo actuarial total de las anualidades en la fecha de corte se obtiene descontando cada flujo nominal anual (suma de componentes ciertos y vitalicios, para activos y pensionados, por sexo) a la tasa de descuento del plan:
+
+$$\text{VP} \;=\; \sum_{t=1}^{H} v^t \cdot \big[\, cc_t + cv_t \,\big],$$
+
+donde $H$ es el horizonte de proyección (100 años en este modelo) y $cc_t$, $cv_t$ son los flujos ciertos y vitalicios agregados del año $t$, consolidados por sexo y categoría (activos y pensionados).
+
+La tasa utilizada en la fórmula anterior corresponde directamente al parámetro de tasa de descuento definido en la hoja de parámetros del modelo, aplicada como tasa efectiva anual de capitalización compuesta, sin transformaciones adicionales. Asimismo, siguiendo la convención establecida para el resto de beneficios del plan, el primer año proyectado corresponde al año calendario siguiente a la fecha de corte, de modo que $t=1$ representa el primer año de pagos potenciales tanto para pensionados actuales como para empleados activos.
+
+## Cálculo de la suma única de reconocimiento (*Lump Sum*)
+
+La suma única de reconocimiento, o *Lump Sum*, se modeló como un beneficio pagadero una sola vez a los empleados activos que cumplen las condiciones establecidas por el plan. A diferencia de las anualidades, este beneficio no genera una serie de pagos periódicos, sino un único pago futuro condicionado a que la persona alcance viva la edad o momento de reconocimiento correspondiente.
+
+El cálculo se desarrolló siguiendo la lógica actuarial de valor presente presentada por Bowers et al. (1997), en la cual los pagos futuros contingentes se ponderan por la probabilidad de ocurrencia del evento asegurado y se descuentan al año base de valoración. En este caso, el evento relevante corresponde a que el empleado activo sobreviva hasta el momento en que tiene derecho a recibir la suma única.
+
+Sea $(x_i)$ la edad inicial del empleado activo $(i)$, $(s_i)$ su sexo, $(y_0)$ el año base de valoración y $(t_i)$ el número de años que faltan para que alcance la edad de reconocimiento del beneficio. Entonces, la probabilidad de que el empleado sobreviva hasta dicho momento se calculó mediante
+
+$$
+{}*{t_i}p*{x_i}^{(s_i,y_0)}=\prod_{j=0}^{t_i-1}
+\left(1-q_{x_i+j}^{(s_i,y_0+j)}\right),
+$$
+
+donde $(q_{x_i+j}^{(s_i,y_0+j)})$ representa la probabilidad de muerte correspondiente a la edad alcanzada, el sexo y el año calendario proyectado, según la tabla de mortalidad dinámica SP-2015 de SUPEN.
+
+El monto del beneficio se estimó a partir del salario proyectado al momento de reconocimiento y de las condiciones definidas por el plan. Si $(S_{i,0})$ representa el salario actual del empleado $(i)$, entonces el salario proyectado al año $(t_i)$ se expresó como
+
+$$
+S_{i,t_i}=S_{i,0}(1+g)^{t_i},
+$$
+
+donde $(g)$ representa la tasa anual de crecimiento salarial considerada en la valoración. Esta tasa puede incorporar tanto inflación como crecimiento real del salario, según los supuestos definidos en la hoja de parámetros.
+
+De forma general, el monto de la suma única para el empleado $(i)$ se representó como
+
+$$
+LS_i = m_i S_{i,t_i},
+$$
+
+donde $(LS_i)$ es el monto esperado del *Lump Sum* y $(m_i)$ corresponde al factor o múltiplo aplicado según las condiciones del plan, como la antigüedad reconocida o la escala definida para el beneficio.
+
+El flujo esperado nominal asociado al empleado $(i)$ se obtuvo multiplicando el monto del beneficio por la probabilidad de llegar vivo al momento de pago:
+
+$$
+F_i^{LS}
+={}*{t_i}p*{x_i}^{(s_i,y_0)} LS_i.
+$$
+
+Posteriormente, el valor presente actuarial del beneficio individual se calculó descontando dicho flujo al año base de valoración. Sea $(i_a)$ la tasa efectiva anual de descuento y
+
+$$
+v=\frac{1}{1+i_a}
+$$
+
+el factor de descuento anual. Entonces, el valor presente actuarial individual se obtuvo como
+
+$$
+VP_i^{LS}
+=v^{t_i}
+{}*{t_i}p*{x_i}^{(s_i,y_0)}
+LS_i.
+$$
+
+Finalmente, el costo nominal esperado total del *Lump Sum* se calculó sumando los flujos esperados individuales:
+
+$$
+CN^{LS}=\sum_{i\in A} F_i^{LS},
+$$
+
+donde (A) representa el conjunto de empleados activos considerados en la valoración.
+
+De manera análoga, el costo actuarial total en valor presente de la suma única de reconocimiento se obtuvo como
+
+$$
+VP^{LS} = \sum_{i\in A} VP_i^{LS}.
+$$
+
+Este procedimiento permitió valorar el *Lump Sum* como un pago único futuro, contingente a la supervivencia del empleado hasta el momento de reconocimiento.
+
+## Estimación del costo actuarial de cada beneficio y del costo actuarial total
+
+Una vez construidas las proyecciones demográficas y financieras de los beneficios, se estimó el costo actuarial individual de cada beneficio considerado en el plan. En particular, se incorporaron los beneficios por muerte de empleados activos, beneficios por muerte de pensionados, anualidades de pensión y suma única de reconocimiento (*Lump Sum*).
+
+Para cada beneficio $(k)$, se obtuvo primero el flujo esperado anual $(F_{k,t})$, donde $(t)$ representa el año de proyección. Este flujo corresponde al monto esperado de pago del beneficio en el año $(t)$, calculado a partir de las probabilidades de supervivencia, muertes esperadas, montos de pensión o condiciones específicas de cada beneficio.
+
+El costo nominal esperado de cada beneficio se calculó como la suma simple de sus flujos esperados durante todo el horizonte de proyección:
+
+$$
+CN_k=\sum_{t=0}^{n} F_{k,t},
+$$
+donde $(CN_k)$ representa el costo nominal esperado del beneficio $(k)$, $(F_{k,t})$ es el flujo esperado del beneficio en el año $(t)$, y $(n)$ es el horizonte de proyección.
+
+Sin embargo, el costo nominal no considera el valor del dinero en el tiempo. Por esta razón, se calculó también el costo actuarial en valor presente. Sea $(i)$ la tasa efectiva anual de descuento y
+
+$$
+v=\frac{1}{1+i}
+$$
+
+el factor de descuento anual. Entonces, el costo actuarial en valor presente del beneficio $(k)$ se estimó como
+
+$$
+VP_k=\sum_{t=0}^{n} v^t F_{k,t}.
+$$
+
+Esta expresión permite traer al año base de valoración los pagos esperados futuros, de manera que los beneficios puedan compararse en una misma fecha de referencia.
+
+En el caso de los beneficios por muerte, los flujos esperados se obtuvieron multiplicando las muertes esperadas por el beneficio unitario correspondiente:
+
+$$
+F_{k,t}=D_{k,t}B_{k,t},
+$$
+
+donde $(D_{k,t})$ corresponde a las muertes esperadas asociadas al beneficio $(k)$ durante el año $(t)$, y $(B_{k,t})$ representa el monto del beneficio pagadero en dicho año.
+
+Para las anualidades de pensión, el flujo esperado anual se obtuvo a partir de los pagos proyectados de pensión, considerando la supervivencia de la población pensionada y los pagos establecidos por el plan. De forma general, se representó como
+
+$$
+F_{A,t}=P_t L_t^P,
+$$
+
+donde $(P_t)$ es el pago anual esperado por pensionado y $(L_t^P)$ es la cantidad esperada de pensionados vivos durante el año $(t)$.
+
+Para la suma única de reconocimiento, el flujo esperado anual se calculó según los trabajadores que cumplen las condiciones para recibir el beneficio en cada año de proyección. Su costo actuarial se obtuvo descontando los pagos esperados de forma consistente con los demás beneficios.
+
+Una vez estimado el costo actuarial de cada beneficio, se calculó el costo actuarial total de los beneficios otorgados mediante la suma de los valores presentes individuales:
+
+$$
+VP_{\text{total}}=\sum_{k=1}^{m} VP_k,
+$$
+
+donde $(m)$ representa la cantidad de beneficios incluidos en el análisis.
+
+De forma análoga, el costo nominal total esperado se obtuvo como
+
+$$
+CN_{\text{total}}=\sum_{k=1}^{m} CN_k.
+$$
+
+La estimación de los costos actuariales se realizó siguiendo el enfoque de Bowers et al. (1997), en el cual los pagos futuros esperados se valoran mediante su valor actuarial presente.
+
+Por tanto, el costo actuarial total resume el valor presente de todos los compromisos esperados del plan, mientras que el costo nominal total muestra el monto acumulado de pagos esperados sin aplicar descuento financiero.
+
+## Cálculo de primas por grupo de edad y sexo
+
+Para la obtención de primas se dividió la población de empleados activos por sexo y grupo etario. Las primas se calcularon de la siguiente forma:
+
+$$
+\text{Prima}_{\text{Grupo}} = \frac{VPA\left(\text{Costos Actuariales del grupo}\right)}{VP\left(\text{Masa salarial total del grupo}\right)}
+$$
+
+La componente del VPA de los costos ya ha sido abordada previamente; lo único a considerar es que aquí se toman por grupo y no para toda la población.
+
+### Masa salarial proyectada
+
+Para la componente del denominador se aplicó la siguiente metodología:
+
+1. Del salario mensual actual de cada persona se obtuvo el salario anual actual multiplicando por 13 (incluyendo el aguinaldo).  
+2. A partir del cálculo anual a la fecha de corte, se proyecta el salario anual esperado por grupo para el año $2025+k$:
+
+$$
+S_{2025+k} = S_{\text{corte}} \cdot (1+g)^k \cdot {}_k p_x
+$$
+
+donde:  
+$S_{2025+k}$: salario anual esperado del grupo en el año $2025+k$.  
+$S_{\text{corte}}$: salario anual del grupo a la fecha de corte.  
+$g = (1+\text{inflación})(1+\text{incremento real}) - 1$: crecimiento nominal del salario por año.  
+${}_k p_x$: probabilidad de sobrevivencia del grupo hasta el año $2025+k$.
+
+### Valor presente de la masa salarial
+
+Finalmente, para obtener el valor presente de la masa salarial total del grupo se suman los salarios anuales proyectados desde el año base (2025) hasta la edad de jubilación correspondiente al grupo etario según el sexo:
+
+$$
+VP\left(\text{Masa salarial}\right) = \sum_{k=0}^{T-1} v^k \cdot S_{2025+k}
+$$
+
+donde:  
+$T$: número de años faltantes para la jubilación del grupo.  
+$v = \frac{1}{1+i}$: factor de descuento anual, con $i$ la tasa de interés.  
+
+Esta metodología para la masa salarial es análoga al cálculo de una anualidad.
+
+## Cálculo de la prima media nivelada
+
+De forma análoga al cálculo por grupos, la prima media nivelada se obtiene como:
+
+$$
+\text{Prima media nivelada} = \frac{VPA\left(\text{Costos Actuariales totales}\right)}{VP\left(\text{Masa salarial total}\right)}
+$$
+
+Para la obtención del valor presente de la masa salarial se sumaron las masas salariales de todos los grupos de empleados activos.  
+En cuanto a los costos, se tomó en cuenta el VPA total del plan de beneficios para toda la población (activos y pensionados).
+
+# Resultados obtenidos
+
+## Proyección de anualidades
+
+En cuanto a las anualidades de pensión, se obtuvo el componente de mayor peso dentro del plan. La proyección se desarrolló sobre un horizonte de 101 años (2025–2125), separando los flujos generados por los pensionados existentes a la fecha de corte y por los empleados activos que alcanzan la edad de jubilación dentro del horizonte de proyección. El flujo de los pensionados actuales inicia en 2026 y se extingue alrededor de 2083, conforme la cohorte original se agota por efecto de la mortalidad. El flujo de los empleados activos, en cambio, es nulo entre 2025 y 2031, dado que ningún participante activo alcanza aún la edad de jubilación en ese periodo, e inicia en 2032, superando en magnitud al de los pensionados actuales a partir de 2043, año en que el efecto acumulado de las nuevas jubilaciones y del crecimiento salarial supera a la cohorte pensionada original. El costo nominal esperado total de las anualidades fue de ₡430.802.415.932,75, mientras que el costo actuarial a valor presente, descontado a la fecha de valuación con la tasa nominal anual del 6,5 %, fue de ₡29.143.634.218,50. El flujo nominal anual máximo se alcanzó en 2073 (₡12.407.035.081,30), mientras que el valor presente anual máximo se observó en 2064 (₡880.735.150,81), año en el que el crecimiento nominal de los flujos todavía compensaba el efecto del descuento financiero acumulado; a partir de ese punto, el descuento domina y el valor presente decrece de forma sostenida hasta la extinción completa de ambas cohortes alrededor de 2119.
+
+Al desglosar este resultado por sexo, se obtuvo lo siguiente:
+
+| Componente |           Costo nominal |   Costo actuarial (VP) |
+|------------|------------------------:|-----------------------:|
+| Mujeres    |     ₡242.687.516.177,41 |     ₡16.994.861.114,90 |
+| Hombres    |     ₡188.114.899.755,33 |     ₡12.148.773.103,60 |
+| **Total**  | **₡430.796.400.185,61** | **₡29.143.634.218,50** |
+
+Como se mencionó en la sección de análisis estadístico, esta diferencia tiene sentido por la combinación de varios factores: la mayor proporción de mujeres dentro de la población pensionada (55,15 % frente a 44,85 %) y, en menor medida, dentro de la población activa (51,34 % frente a 48,66 %); el salario mensual promedio más alto de las mujeres activas (₡1.088.808,49 frente a ₡960.074,99), que incide directamente en el monto de pensión proyectado al momento de la jubilación; y los factores actuariales propios del modelo, es decir, la edad de jubilación menor para mujeres (63 años frente a 65 años) y su mayor esperanza de vida tanto en la población activa (51,92 frente a 48,28 años) como en la pensionada (16,87 frente a 14,94 años). Esto explica por qué, aun cuando la pensión mensual promedio individual de los hombres pensionados actuales es superior a la de las mujeres (₡205.785,84 frente a ₡187.979,87), el costo actuarial agregado atribuible a las mujeres resulta mayor.
+
+## Proyección financiera y costo actuarial de los beneficios
+
+A partir de las proyecciones realizadas, se estimaron los flujos esperados nominales y los valores presentes actuariales de los beneficios considerados en el plan. Los resultados se obtuvieron de forma separada para cada beneficio, con el objetivo de identificar su contribución individual al costo total.
+
+En primer lugar, para el beneficio por muerte de empleados activos, se obtuvo un costo nominal esperado de ₡700.868.080,89. Al descontar los flujos esperados a la fecha de valuación, el costo actuarial a valor presente fue de ₡57.946.601,36. Este monto representa el valor actual de los pagos esperados por fallecimientos ocurridos mientras los participantes se encuentran en condición activa.
+
+Por su parte, el beneficio por muerte de pensionados presentó un costo nominal esperado de ₡948.234.510,00 y un costo actuarial a valor presente de ₡233.162.744,05. Este resultado corresponde a los pagos esperados asociados a fallecimientos de participantes en condición de pensionados.
+
+Al sumar ambos beneficios de muerte, el valor presente actuarial conjunto fue de ₡291.109.345,41. Este monto refleja el costo actuarial total esperado de los beneficios por fallecimiento, distinguiendo entre la condición activa y pensionada del participante al momento del pago.
+
+En cuanto a las anualidades de pensión, se obtuvo el componente de mayor peso dentro del plan. El costo nominal esperado fue de ₡430.796.400.185,61, mientras que el costo actuarial a valor presente fue de ₡29.634.349.842,37. La magnitud de este resultado se explica porque las anualidades representan pagos periódicos de largo plazo.
+
+Para la suma única de reconocimiento o *Lump Sum*, el costo nominal esperado fue de ₡2.736.349.062,19. Al traer estos pagos a valor presente, el costo actuarial estimado fue de ₡529.153.943,49. Este beneficio tuvo un impacto menor que las anualidades de pensión, pero superior al costo individual de los beneficios de muerte.
+
+Finalmente, al integrar todos los beneficios analizados, se obtuvo un costo nominal esperado total de ₡435.181.851.838,70. El costo actuarial total a valor presente fue de ₡30.454.613.131,27. Este valor representa la estimación global del compromiso económico del plan, considerando los beneficios por muerte de activos, muerte de pensionados, anualidades de pensión y suma única de reconocimiento.
+
+# Resultados del análisis de sensibilidad
+
+Para el análisis de sensibilidad de las tasas, se calcularon los costos totales nominales (i.e., la suma de los flujos anuales esperados brutos) y el valor presente actuarial de los costos (i.e., la suma de los flujos anuales esperados traídos a valor presente) al reducir y aumentar en un punto porcentual la tasa de incremento salarial (2% anual originalmente) y la tasa de descuento (6,5% anual) para cada beneficio en el plan. El objetivo fue observar la tendencia general, cuantificar las diferencias y ofrecer un razonamiento que justifique los resultados.
+
+
+## Costos Nominales
+
+| Incremento real | Lump Sum             | Beneficio por Muerte | Anualidades             |
+|----------------:|---------------------:|---------------------:|------------------------:|
+| 0,01            | ₡2 091 179 011,97    | ₡1 649 102 590,89    | ₡319 820 252 421,33     |
+| 0,02            | ₡2 736 349 062,19    | ₡1 649 102 590,89    | ₡430 796 400 185,61     |
+| 0,03            | ₡3 585 210 177,90    | ₡1 649 102 590,89    | ₡582 165 036 205,87     |
+
+: Costo Total Nominal por tasa de incremento salarial
+
+| Incremento real | Lump Sum | Beneficio por Muerte | Anualidades |
+|----------------:|---------:|---------------------:|------------:|
+| 0,01            | 23,6%    | 0%                   | 25,8%       |
+| 0,02            | 0%       | 0%                   | 0%          |
+| 0,03            | 23,7%    | 0%                   | 26,0%       |
+
+: Diferencias porcentuales respecto a la tasa original (0,02)
+
+En cuanto a los costos nominales, lo primero que se observa es que los beneficios por muerte son idénticos para toda tasa de incremento salarial. Esto se debe a que dicho beneficio no depende de los salarios, sino únicamente de la edad y el sexo del trabajador o pensionado. Por lo tanto, el análisis se centra en los otros dos beneficios.
+
+En el caso del **Lump Sum**, los costos son menores cuando la tasa de incremento salarial es más baja, con una diferencia negativa de aproximadamente 23,6% respecto al valor original. Al aumentar un punto porcentual la tasa, la diferencia es cercana al 23,7%. De aquí se desprenden dos conclusiones:  
+1. Un incremento salarial real más alto implica mayor poder adquisitivo, mientras que uno más bajo implica menor poder adquisitivo. Bajo el supuesto de tasas constantes, esto se traduce en salarios proyectados más altos o más bajos que los de la tasa original.  
+2. Las diferencias porcentuales son bastante simétricas en magnitud, independientemente de si la tasa aumenta o disminuye.
+
+En el caso de las **Anualidades**, el análisis es similar, aunque con diferencias más amplias. Cabe señalar que el cambio en el incremento salarial solo afecta a los trabajadores activos, ya que las pensiones se ajustan únicamente por inflación. Al reducir la tasa en un punto porcentual, la diferencia es de aproximadamente -25,8%, mientras que al aumentarla es de +26%. Una explicación plausible es que, al tratarse de pagos mensuales recurrentes, el efecto del cambio se acumula a lo largo de los años, amplificado por el hecho de que la pensión depende del último salario, que es mayor que el considerado en el Lump Sum. En consecuencia, el impacto es más significativo.
+
+
+## Cambios en el valor presente de los Costos Actuariales
+
+| Incremento real | Tasa de descuento 0,055 | Tasa de descuento 0,065 | Tasa de descuento 0,075 |
+|----------------:|------------------------:|------------------------:|------------------------:|
+| **Lump Sum**    |                         |                         |                         |
+| 0,01            | ₡523 747 903,46         | ₡416 494 393,98         | ₡333 510 789,82         |
+| 0,02            | ₡668 687 467,62         | ₡529 153 943,49         | ₡421 597 633,70         |
+| 0,03            | ₡855 851 552,72         | ₡674 107 218,11         | ₡534 516 210,04         |
+| **Beneficio por Muerte** |                |                         |                         |
+| 0,01            | ₡348 291 949,35         | ₡291 109 345,41         | ₡248 632 523,80         |
+| 0,02            | ₡348 291 949,35         | ₡291 109 345,41         | ₡248 632 523,80         |
+| 0,03            | ₡348 291 949,35         | ₡291 109 345,41         | ₡248 632 523,80         |
+| **Anualidades** |                         |                         |                         |
+| 0,01            | ₡32 449 412 579,06      | ₡23 284 360 686,74      | ₡17 168 098 907,41      |
+| 0,02            | ₡41 245 598 095,43      | ₡29 139 619 674,00      | ₡21 123 731 917,53      |
+| 0,03            | ₡53 003 012 052,02      | ₡36 935 165 986,30      | ₡26 368 938 489,19      |
+
+: Valor presente del Costo Total Actuarial para cada combinación de tasas
+
+### Lump Sum
+Manteniendo la tasa de incremento original y variando la tasa de descuento en un punto porcentual, la tendencia es la esperada: a mayor tasa de interés, menor es el valor presente de los flujos, y viceversa.  
+
+Un comportamiento interesante se observa al movernos en diagonal en el análisis: cuando ambas tasas aumentan simultáneamente, sus efectos se contrarrestan (el mayor descuento reduce los costos, mientras que el mayor incremento salarial los eleva), generando un efecto compensatorio que mantiene los valores relativamente estables. En cambio, en la diagonal opuesta, las tasas se mueven en direcciones contrarias y ambos efectos se suman, produciendo costos más alejados del valor original.
+
+### Beneficio por Muerte
+El análisis es más sencillo: como se explicó antes, los costos no dependen de los salarios. El único factor que los afecta es la tasa de descuento, y la tendencia es siempre a la baja conforme esta aumenta, ya que el dinero pierde más valor anualmente.
+
+### Anualidades de pensión
+La tendencia frente a cambios en la tasa de descuento es análoga a la del Lump Sum. Sin embargo, las variaciones son mucho mayores debido a que se trata de un flujo recurrente acumulado a lo largo de los años y que representa el mayor porcentaje de los costos totales del plan.  
+
+En diagonal, los razonamientos son los mismos que para el Lump Sum, pero las diferencias son más amplias:  
+De izquierda a derecha, las variaciones son menores en magnitud, aunque proporcionalmente más altas que en el Lump Sum.  
+De derecha a izquierda, las diferencias son más significativas y se alejan más del valor original.  
+
+Esto se explica porque en el Lump Sum el descuento se aplica una sola vez, mientras que en las anualidades se aplica cada año sobre cada flujo, amplificando el efecto.
+
+# Proceso de reducción del costo
+
+Como parte de la inmersión en posibles escenarios del acontecer actuarial, el proyecto plantea la necesidad de reducir el costo del plan de beneficios a empleados en una magnitud del 10%. Dado que los beneficios abordados contemplan elementos fundamentales en la vida de los trabajadores y sus familiares: la pensión de retiro por vejez y el seguro por concepto de fallecimiento; resulta imprescindible manejar el proceso de reducción de costos con suma cautela, considerando en todo momento el impacto real que las decisiones tomadas tendrán sobre la realidad de las personas correspondientes.
+
+En primera instancia, previo a definir el conjunto de medidas por aplicar, es preciso analizar los costos actuariales asociados al plan de beneficios a empleados, con tal de identificar los rubros que representan la mayor carga en el costo total reportado. A partir de las estimaciones realizadas en el libro de Excel, se detalla el valor presente del costo actuarial:
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla \#**
+
+*Costo actuarial de los beneficios a empleados*
+
+```{=latex}
+\end{center}
+```
+
+|  |  |  |
+|:----------------------:|:----------------------:|:----------------------:|
+| **Beneficio** | **Costo actuarial** | **Porcentaje sobre el costo total** |
+| Seguro de vida para empleados activos | ₡57 946 601.36 | 0.19% |
+| **Beneficio** | **Costo actuarial** | **Porcentaje sobre el costo total** |
+| Seguro de vida para empleados pensionados | ₡233 162 744.05 | 0.77% |
+| **Beneficio** | **Costo actuarial** | **Porcentaje sobre el costo total** |
+| Anualidades de las pensiones por vejez | ₡29 634 349 842.37 | 97.31% |
+| **Beneficio** | **Costo actuarial** | **Porcentaje sobre el costo total** |
+| Suma única de reconocimiento | ₡529 153 943.49 | 1.74% |
+| **Beneficio** | **Costo actuarial** | **Porcentaje sobre el costo total** |
+| *Total reportado* | *₡*30 454 613 131.27 | *100%* |
+
+En vista de que el costo actuarial de los beneficios otorgados a empleados representa un monto de ₡30 454 613 131.27, la reducción que se pretende efectuar tiene un valor de ₡3 045 461 313. Además, se identifica que los tres rubros con mayor participación en el costo total son las anualidades de las pensiones por vejez con un 97.31%, la suma única de reconocimiento con un 1.74% y el seguro de vida para empleados pensionados con un 0.77%. Es posible percatarse de que un porcentaje cercano a la totalidad del costo reportado se concentra en las anualidades de las pensiones por vejez, los demás beneficios solo reúnen un 2.69% del costo total, de manera que el mayor porcentaje de reducción deberá aplicarse al primer ámbito mencionado.
+
+Posterior a la consideración del escenario anterior, se decidió emprender reducciones en dos beneficios particulares: las pensiones por vejez y la suma única de reconocimiento. Se excluyó el seguro de vida puesto que el costo actuarial derivado de su extensión es considerablemente bajo, de manera que no resulta esencial disminuir dicho monto con tal de alcanzar el porcentaje objetivo. Las metodología detrás del proceso de reducción en cada rubro responde a consideraciones distintas; se procede a detallar a continuación el procedimiento trazado.
+
+## Reducción del costo actuarial de las pensiones por vejez
+
+La reducción del costo actuarial de las pensiones por vejez constituye un elemento sumamente delicado, puesto que dicho proceso involucra aspectos relacionados de manera directa con la calidad de vida de las personas durante su tercera edad. En consideración de esto, se procuró aplicar medidas reductivas con el menor impacto posible sobre el bienestar de la mayoría de la población cubierta.
+
+Los mecanismos aplicados repercuten en dos elementos: el periodo por el que las pensiones están garantizadas y el porcentaje del salario sobre el cual se calculan las pensiones. En primer lugar, se determinó que la reducción del tiempo en el que se garantizan las pensiones corresponde a una solución viable, dado que el efecto asociado a su práctica se concentra en una población reducida. Las estimaciones desarrolladas mostraron que la esperanza de vida de los pensionados es de aproximadamente 15.94 años, por lo que en general, las personas viven más de cinco años tras pensionarse. La disminución se efectuó por dos años, así, las pensiones pasaron de garantizarse por cinco años a garantizarse por solo tres años.
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla**
+
+*Esperanza de vida de la población bajo estudio*
+
+```{=latex}
+\end{center}
+```
+
+|                       |                       |                           |
+|:---------------------:|:---------------------:|:-------------------------:|
+| **Esperanza de vida** | **Empleados activos** | **Empleados pensionados** |
+|       *Mujeres*       |         51.81         |           15.71           |
+| **Esperanza de vida** | **Empleados activos** | **Empleados pensionados** |
+|       *Hombres*       |         48.17         |           16.22           |
+| **Esperanza de vida** | **Empleados activos** | **Empleados pensionados** |
+|       *General*       |         50.04         |           15.94           |
+
+En segundo lugar, se optó por una rebaja de 1.5 puntos porcentuales del porcentaje salarial sobre el cual se calculan las pensiones por vejez, aplicada a cada tramo de antigüedad. Si bien, tal medida impacta de forma negativa los ingresos percibidos por las personas pensionadas para satisfacer sus necesidades, se procuró que la reducción se hiciera por el menor porcentaje posible. Además, la decisión de reducir el porcentaje de los tramos en igual medida, no solo responde a un sentido de igualdad, sino que también procura preservar el incentivo para que los empleados permanezcan en condición de activos por periodos más extensos; lo cual representa el escenario contrario al caso en que se decidiera aplicar una reducción regida por la equidad, disminuyendo en mayor medida los porcentajes más altos y en menor medida los porcentajes más pequeños: los sujetos tras percibir que las pensiones con porcentajes elevados reciben los mayores impactos de las medidas reduccionistas, abandonarían la motivación de mantenerse como empleados activos por lapsos más prolongados, con el objetivo de acceder a pensiones con un mejor pago. La tabla extendida a continuación muestra los porcentajes actualizados posterior a la aplicación de la alternativa planteada.
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla**
+
+*Actualización de los porcentajes sobre los cuales se calcula la pensión por vejez*
+
+```{=latex}
+\end{center}
+```
+
+|                        |                         |                            |
+|:----------------------:|:----------------------:|:----------------------:|
+| **Años de antigüedad** | **Porcentaje anterior** | **Porcentaje actualizado** |
+|         0 - 10         |           0%            |             0%             |
+| **Años de antigüedad** | **Porcentaje anterior** | **Porcentaje actualizado** |
+|        10 - 20         |           45%           |           43.5%            |
+| **Años de antigüedad** | **Porcentaje anterior** | **Porcentaje actualizado** |
+|        20 - 30         |           65%           |           63.5%            |
+| **Años de antigüedad** | **Porcentaje anterior** | **Porcentaje actualizado** |
+|        30 - 40         |           85%           |           83.5%            |
+| **Años de antigüedad** | **Porcentaje anterior** | **Porcentaje actualizado** |
+|       Más de 40        |          100%           |           98.5%            |
+
+De acuerdo con la Organización Internacional del Trabajo (OIT), en enero de 2024 el salario mínimo de Costa Rica se fijó en ₡358 609.5. Al emplear dicha cifra para calcular los nuevos montos asociados a la pensión por vejez se obtiene lo siguiente:
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla**
+
+*Cálculo de los nuevos montos asociados a la pensión por vejez a partir del salario mínimo*
+
+```{=latex}
+\end{center}
+```
+
+|                        |                    |                       |
+|:----------------------:|:------------------:|:---------------------:|
+| **Años de antigüedad** | **Monto anterior** | **Monto actualizado** |
+|         0 - 10         |         ₡0         |          ₡0           |
+| **Años de antigüedad** | **Monto anterior** | **Monto actualizado** |
+|        10 - 20         |    ₡161 374.28     |      ₡155 995.13      |
+| **Años de antigüedad** | **Monto anterior** | **Monto actualizado** |
+|        20 - 30         |    ₡233 096.18     |      ₡227 717.03      |
+| **Años de antigüedad** | **Monto anterior** | **Monto actualizado** |
+|        30 - 40         |    ₡304 818.08     |      ₡299 438.93      |
+| **Años de antigüedad** | **Monto anterior** | **Monto actualizado** |
+|       Más de 40        |     ₡358 609.5     |      ₡353 230.36      |
+
+Un empleado cuyo último salario reportado fue el salario mínimo del país, es decir ₡358 609.5, enfrenta una reducción de ₡5 379.1425 en cada tramo de antigüedad. Si bien, la práctica de esta estrategia implica la percepción de un menor ingreso por parte de los pensionados, sus efectos financieros adversos no poseen un impacto considerable.
+
+## Reducción del costo actuarial de la suma única de reconocimiento
+
+Dado que la suma única de reconocimiento constituye una bonificación otorgada a los empleados a la edad de 60 años, la cual se paga sobre el último salario reportado y un factor de multiplicación determinado según los años laborados, representa un beneficio cuya extensión produce efectos financieros temporales, ya que se otorga en una única ocasión.
+
+La medida aplicada en este rubro, consistió en una reducción del porcentaje salarial por el cual se multiplica el factor derivado de la antigüedad. Inicialmente el porcentaje se encontraba en 100%, así tras la aplicación de la estrategia, se fijó en 86.6838%, lo que representa una caída de 13.3162 puntos porcentuales. A pesar de que el cambio pueda parecer abrupto, lo cierto es que una reducción del ingreso obtenido bajo el presente beneficio posee menores repercusiones en la vida de los asegurados, pues como se mencionó al inicio, sus efectos financieros son temporales. Lo anterior constituye el caso contrario a las modificaciones efectuadas en el porcentaje salarial mediante el cual se calculan las pensiones, puesto que las pensiones al ser anualidades vitalicias garantizadas durante tres años, tienen un efecto financiero de largo plazo en la realidad de los sujetos.
+
+La tabla a continuación detalla, a través del salario mínimo, la suma única de reconocimiento actualizada posterior a la aplicación de la alternativa descrita.
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla**
+
+*Cálculo de los nuevos montos asociados a la suma única de reconocimiento a partir del salario mínimo*
+
+```{=latex}
+\end{center}
+```
+
+|  |  |  |  |
+|:----------------:|:-----------------:|:----------------:|:----------------:|
+| **Años de antigüedad** | **Factor de multiplicación** | **Monto anterior** | **Monto actualizado** |
+| 0 - 10 | 1 | ₡358 609.5 | ₡310 856.34 |
+| **Años de antigüedad** | **Factor de multiplicación** | **Monto anterior** | **Monto actualizado** |
+| 10 - 20 | 2 | ₡717 219 | ₡621 712.68 |
+| **Años de antigüedad** | **Factor de multiplicación** | **Monto anterior** | **Monto actualizado** |
+| 20 - 30 | 3 | ₡1 075 828.5 | ₡932 569.03 |
+| **Años de antigüedad** | **Factor de multiplicación** | **Monto anterior** | **Monto actualizado** |
+| 30 - 40 | 4 | ₡1 434 438 | ₡1 243 425.37 |
+| **Años de antigüedad** | **Factor de multiplicación** | **Monto anterior** | **Monto actualizado** |
+| Más de 40 | 5 | ₡1 793 047.5 | ₡1 554 281.71 |
+
+## Resultado de las medidas reductivas
+
+La disminuciones planteadas en los apartados arriba, constituyeron una estrategia conjunta que al ser aplicada permitió alcanzar el porcentaje de reducción deseado. De esta manera, se extienden las cifras obtenidas tras la conclusión del proceso:
+
+```{=latex}
+\begin{center}
+```
+
+**Tabla**
+
+*Cifras obtenidas tras el proceso de reducción de costos*
+
+```{=latex}
+\end{center}
+```
+
+|  |  |  |
+|:----------------------:|:----------------------:|:----------------------:|
+| **Beneficio** | **Costo actuarial inicial** | **Costo actuarial actualizado** |
+| Anualidades de las pensiones por vejez | ₡15 293 673 250.90 | ₡13 757 676 922.12 |
+| **Beneficio** | **Costo actuarial inicial** | **Costo actuarial actualizado** |
+| Suma única de reconocimiento | ₡529 153 943.49 | ₡458 690 746.07 |
+| **Beneficio** | **Costo actuarial inicial** | **Costo actuarial actualizado** |
+| *Total* | ₡15 822 827 194.39 | ₡14 216 367 668.19 |
+
+De la tabla se determina que la diferencia entre los costos actuariales reportados antes y después de las medidas de reducción equivale a ₡1 606 459 526.2, superando el monto previsto inicialmente: ₡1 606 459 025.66, por un total de ₡500.54.
+
+# Análisis comparativo (Alexandra)
+
+# Conclusiones (Alexandra)
+
+# Recomendaciones (Alexandra)
+
+# Referencias
+
+Bowers, N. L., Gerber, H. U., Hickman, J. C., Jones, D. A., & Nesbitt, C. J. (1997). *Actuarial mathematics* (2nd ed.). Society of Actuaries.
